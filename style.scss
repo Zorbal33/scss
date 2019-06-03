@@ -1,0 +1,41 @@
+@mixin ring($color, $size){
+    border-radius:50%;
+    color:$color;
+    width:$size;
+    height:$size;
+    border:6px solid;
+    box-shadow: 2px 2px 2px 2px $color;
+  }
+
+h2,h3{
+      display:flex;
+      justify-content:center;
+      align-items: center;
+      
+}
+
+#multi{
+        display:flex;
+      justify-content:center;
+      align-items: center;
+
+}
+
+#ringGold{
+    @include ring(gold,160px);
+    align-items: center;
+    margin:10px;
+    
+}
+
+#ringOrange{
+  @include ring(orange,75px);
+  margin:10px;
+}
+
+    @for $i from 1 through 6 {
+        #multiRing-#{$i}{
+            @include ring(black,20px*$i);
+                  margin-left:-19px;
+        }
+    }
